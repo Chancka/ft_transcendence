@@ -1,10 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./views/ChatPage.tsx";
-import "./style/index.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.tsx';
+import './style/index.css';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+export const domainName = "localhost:8080";
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

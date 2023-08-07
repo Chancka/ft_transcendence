@@ -1,11 +1,9 @@
-import { useState } from "react";
-
-function SearchChat() {
-  const [search, setSearch] = useState("");
-
+function SearchChat(props: {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-    console.log(e.target.value);
+    props.setSearch(e.target.value);
   };
 
   return (
@@ -13,8 +11,8 @@ function SearchChat() {
       <input
         type="text"
         placeholder="Search Chat"
-        value={search}
-        onChange={handleChange} // find how to change the display of SingleChat.tsx
+        value={props.search}
+        onChange={handleChange} // find how to change the display of the chat tabs
         className="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full"
       />
     </div>
